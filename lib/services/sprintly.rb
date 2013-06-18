@@ -72,7 +72,7 @@ class Service::Sprintly < Service::Base
 
 	def items_api_url_from_dashboard_url(url)
 		uri = URI(url)
-		product_id = { :product_id => url.match(/(https?:\/\/.*?)\/product\/(\d*)(\/|$)/)[1] }
+		product_id = url.match(/(https?:\/\/.*?)\/product\/(\d*)(\/|$)/)[2]
 		"https://sprint.ly/api/products/#{product_id}/items.json"
 	end
 end
