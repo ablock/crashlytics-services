@@ -35,6 +35,7 @@ class Service::Sprintly < Service::Base
                  "#{ payload[:title] } in #{ payload[:method] }\n\n" + \
                  users_text + \
                  crashes_text + \
+		             "Bundle identifier: #{ payload[:app][:bundle_identifier] }. Platform: #{ payload[:app][:platform] }.\n\n" + \
                  "More information: #{ payload[:url] }"
 
 		post_body = { 'type' => 'defect',
